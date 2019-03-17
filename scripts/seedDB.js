@@ -5,7 +5,7 @@ mongoose.Promise = global.Promise;
 // This file empties the Articles collection and inserts the articles below
 
 mongoose.connect(
-  process.env.MONGODB_URI || "mongodb://localhost/googlebooks",
+  process.env.MONGODB_URI || "mongodb://localhost/googleBooks",
   {
     useMongoClient: true
   }
