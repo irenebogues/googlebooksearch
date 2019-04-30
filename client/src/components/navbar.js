@@ -1,41 +1,50 @@
-<>
-  <Navbar bg="dark" variant="dark">
-    <Navbar.Brand href="#home">Navbar</Navbar.Brand>
-    <Nav className="mr-auto">
-      <Nav.Link href="#home">Home</Nav.Link>
-      <Nav.Link href="#features">Features</Nav.Link>
-      <Nav.Link href="#pricing">Pricing</Nav.Link>
-    </Nav>
-    <Form inline>
-      <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-      <Button variant="outline-info">Search</Button>
-    </Form>
-  </Navbar>
-  <br />
-  <Navbar bg="primary" variant="dark">
-    <Navbar.Brand href="#home">Navbar</Navbar.Brand>
-    <Nav className="mr-auto">
-      <Nav.Link href="#home">Home</Nav.Link>
-      <Nav.Link href="#features">Features</Nav.Link>
-      <Nav.Link href="#pricing">Pricing</Nav.Link>
-    </Nav>
-    <Form inline>
-      <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-      <Button variant="outline-light">Search</Button>
-    </Form>
-  </Navbar>
+import React from "react";
+import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
-  <br />
-  <Navbar bg="light" variant="light">
-    <Navbar.Brand href="#home">Navbar</Navbar.Brand>
-    <Nav className="mr-auto">
-      <Nav.Link href="#home">Home</Nav.Link>
-      <Nav.Link href="#features">Features</Nav.Link>
-      <Nav.Link href="#pricing">Pricing</Nav.Link>
-    </Nav>
-    <Form inline>
-      <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-      <Button variant="outline-primary">Search</Button>
-    </Form>
-  </Navbar>
-</>;
+const Navbar = ({ path }) => {
+  const activeLinkClasses = "nav-item active";
+  const inactiveLinkClasses = "nav-item";
+  return (
+    <nav className="navbar navbar-expand-lg navbar-light bg-light">
+      <Link className="navbar-brand" to="/">
+        (React) Google Books
+      </Link>
+      <button
+        className="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarSupportedContent"
+      >
+        <span className="navbar-toggler-icon" />
+      </button>
+
+      <div className="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul className="navbar-nav mr-auto">
+          <li
+            className={path === "/" ? activeLinkClasses : inactiveLinkClasses}
+          >
+            <Link className="nav-link" to="/">
+              Search
+            </Link>
+          </li>
+          <li
+            className={
+              path === "/saved" ? activeLinkClasses : inactiveLinkClasses
+            }
+          >
+            <Link className="nav-link" to="/saved">
+              Saved
+            </Link>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  );
+};
+
+Navbar.propTypes = {
+  path: PropTypes.string.isRequired,
+};
+
+export default Navbar;
