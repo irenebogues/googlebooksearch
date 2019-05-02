@@ -1,30 +1,20 @@
 {
-  "name": "Google Books Search",
+  "name": "googlebooksearch",
   "version": "1.0.0",
-  "description": "Google Books Search",
-  "main": "server.js",
+  "description": "## About This Boilerplate",
+  "main": "routes.js",
   "scripts": {
-    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
-    "start:prod": "node server.js",
-    "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
-    "client": "cd client && npm run start",
-    "seed": "node scripts/seedDB.js",
-    "install": "cd client && npm install",
-    "build": "cd client && npm run build",
-    "heroku-postbuild": "npm run build"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
-  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/irenebogues/googlebooksearch.git"
+  },
+  "author": "Irene Bogues",
   "license": "ISC",
-  "devDependencies": {
-    "concurrently": "^4.1.0",
-    "nodemon": "^1.18.7"
+  "bugs": {
+    "url": "https://github.com/irenebogues/googlebooksearch/issues"
   },
-  "dependencies": {
-    "body-parser": "^1.18.3",
-    "dotenv": "^6.2.0",
-    "express": "^4.16.4",
-    "if-env": "^1.0.4",
-    "mocha": "^6.0.2",
-    "mongoose": "^5.4.18"
-  }
+  "homepage": "https://github.com/irenebogues/googlebooksearch#readme"
 }
